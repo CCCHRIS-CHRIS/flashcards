@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    }
+    
+    body {
+    font-family: Arial, sans-serif;
+    background-image: url('nuvem.jpg'); /* Altere para o nome do seu arquivo */
+    background-size: cover; /* Faz a imagem cobrir todo o fundo */
+    background-position: center; /* Centraliza a imagem */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white; /* Muda a cor do texto para branco */
+    }
+    
+    .container {
+    text-align: center;
+    }
+    
+    .flashcard {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 20px auto;
+    }
+    
+    input[type="checkbox"] {
+    display: none; /* Esconde o checkbox */
+    }
+    
+    .flashcard-label {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    }
+    
+    .front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: rgb(255, 255, 255);
+    border-radius: 10px;
+    }
+    
+    .front {
+    background-color: rgba(3, 7, 82, 0.8); /* Levemente transparente */
+    }
+    
+    .back {
+    background-color: rgba(45, 5, 147, 0.8); /* Levemente transparente */
+    transform: rotateY(180deg);
+    }
+    
+    input[type="checkbox"]:checked + .flashcard-label {
+    transform: rotateY(180deg);
+    }
